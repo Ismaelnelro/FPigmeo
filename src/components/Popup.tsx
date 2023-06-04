@@ -11,10 +11,7 @@ interface PopupProps {
 
 
 export default function Popup({ handleImageSelected }: PopupProps): ReactElement {
-<<<<<<< HEAD
-=======
 
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [isLoaderImage, setIsLoaderImage] = useState<boolean>(false);
 
@@ -24,14 +21,6 @@ export default function Popup({ handleImageSelected }: PopupProps): ReactElement
     setIsLoaderImage(true)
     let input = document.createElement('input');
     input.type = 'file';
-<<<<<<< HEAD
-
-    // Aqui permito usar la camara trasera
-    if (event.target instanceof HTMLButtonElement && event.target.id === 'camare') {
-      input.capture = 'environment';
-    }
-
-=======
     input.capture = 'none'
 
     // Aqui permito usar la camara trasera
@@ -39,15 +28,10 @@ export default function Popup({ handleImageSelected }: PopupProps): ReactElement
       input.capture = 'environment';
     }
 
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
     let isCancelled = false;
 
     input.oninput = (event: Event): void => {
       const target = event.target as HTMLInputElement;
-<<<<<<< HEAD
-
-=======
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
       if (target.files && target.files.length > 0) {
         const file = target.files[0];
         setSelectedImage(file);

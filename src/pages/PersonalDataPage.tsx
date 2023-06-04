@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { ReactElement, useRef, useState } from "react";
-=======
 import { ReactElement, useEffect, useRef, useState } from "react";
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
 import { Link } from "react-router-dom";
 import { Button, Subtitle, Text } from "@tremor/react";
 import { PencilIcon, PlusCircleIcon } from "@heroicons/react/outline";
@@ -22,15 +18,6 @@ interface ListItemType {
 
 
 function PersonalData(): ReactElement {
-<<<<<<< HEAD
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [isPopupActive, setisPopupActive] = useState(false)
-
-  const { user } = useUserData();
-
-
-=======
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
   const [isPopupActive, setisPopupActive] = useState(false)
   const { user, setUserData } = useUserData();
@@ -76,22 +63,12 @@ function PersonalData(): ReactElement {
   }, [selectedImage === undefined])
 
   
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
   const handleImageSelected = async (selectedImage: File | null): Promise<void> => {
     try {
       if (selectedImage) {
         const image = URL.createObjectURL(selectedImage);
         setSelectedImage(image);
         setisPopupActive(false);
-<<<<<<< HEAD
-  
-        if (user.id) {
-          const response = await updateUserImage({ userId: user.id, img: selectedImage });
-          console.log(response.data);
-        }
-      } else {
-        setSelectedImage(null);
-=======
 
         if (user.id) {
           const response = await updateUserImage({ userId: user.id, img: selectedImage });
@@ -104,18 +81,12 @@ function PersonalData(): ReactElement {
         }
       } else {
         setSelectedImage(undefined);
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
         setisPopupActive(false);
       }
     } catch (error) {
       console.error(error);
     }
   };
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> 386b75d4f3a17949fc35ef1a786e2dec434cf5a5
 
 
   return (

@@ -30,7 +30,7 @@ const HomePage: React.LazyExoticComponent<() => JSX.Element> = lazy(
 const ProfilePage: React.LazyExoticComponent<() => JSX.Element> = lazy(
   () => import("../pages/ProfilePage")
 );
-const PersonalData: React.LazyExoticComponent<() => JSX.Element> = lazy(
+const PersonalDataPage: React.LazyExoticComponent<() => JSX.Element> = lazy(
   () => import("../pages/PersonalDataPage")
 );
 const ChangeName: React.LazyExoticComponent<() => JSX.Element> = lazy(
@@ -100,7 +100,7 @@ export default function AppRouter(): JSX.Element {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/transactions" element={<TransactionsPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/personalData" element={<PersonalData />} />
+                <Route path="/personalData" element={<PersonalDataPage />} />
                 <Route path="/changename" element={<ChangeName />} />
                 <Route path="/benefit" element={<BenefitPage />} />
               </Route>
